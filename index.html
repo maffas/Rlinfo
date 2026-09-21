@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <title>RL Tactics</title>
+
+</head>
+
+<body>
+
 <div id="app">
 
   <!-- ========================= -->
@@ -33,6 +51,7 @@
       </button>
 
       <!-- PALETA -->
+
       <div id="corDesenhoArea">
 
         <span id="corLabel">
@@ -143,7 +162,7 @@
 
 
     <!-- ========================= -->
-    <!-- CAMADA DE DESENHO -->
+    <!-- DESENHO -->
     <!-- ========================= -->
 
     <canvas id="desenhoCanvas"></canvas>
@@ -183,15 +202,21 @@
 </div>
 
 
-
 <style>
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
+  width: 100%;
+  min-width: 0;
   margin: 0;
+  padding: 0;
+}
+
+body {
   background: #111;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
@@ -199,13 +224,20 @@ body {
 
 
 /* ========================= */
-/* CAMPO */
+/* APP */
 /* ========================= */
 
 #app {
+  width: 100%;
+  min-height: 100vh;
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+
+/* ========================= */
+/* CAMPO */
+/* ========================= */
 
 #campo {
 
@@ -258,8 +290,6 @@ body {
 }
 
 
-/* BOTÃO ☰ */
-
 #menuButton {
 
   width: 48px;
@@ -288,7 +318,9 @@ body {
 }
 
 
+/* ========================= */
 /* OPÇÕES */
+/* ========================= */
 
 #menuOpcoes {
 
@@ -321,7 +353,9 @@ body {
 }
 
 
-/* BOTÕES DO MENU */
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
 
 #menuOpcoes button {
 
@@ -380,7 +414,7 @@ body {
 
 
 /* ========================= */
-/* PALETA DE COR */
+/* PALETA */
 /* ========================= */
 
 #corDesenhoArea {
@@ -409,15 +443,9 @@ body {
 
 }
 
-
-/* TEXTO */
-
 #corLabel {
   white-space: nowrap;
 }
-
-
-/* SELETOR DE COR */
 
 #corDesenho {
 
@@ -438,7 +466,9 @@ body {
 }
 
 
+/* ========================= */
 /* CONTADOR */
+/* ========================= */
 
 #contador {
 
@@ -500,7 +530,7 @@ body {
   width: 4.3%;
 
   content: url(
-    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/67c1f383-756d-45e8-b20e-66ade5ca0547.png"
+    "https://i.supaimg.com/c4ca8cf3-59f6-45e8-b20e-66ade5ca0547.png"
   );
 
 }
@@ -689,7 +719,6 @@ body {
 }
 
 </style>
-
 
 
 <script>
@@ -1664,3 +1693,103 @@ document
 tornarBolaArrastavel();
 
 </script>
+
+</body>
+</html>
+/* ================================= */
+/* VERSÃO COMPUTADOR / DESKTOP */
+/* ================================= */
+
+@media (min-width: 800px) {
+
+  body {
+    overflow: hidden;
+  }
+
+  #app {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    padding: 20px;
+  }
+
+  /* CAMPO MAIOR NO PC */
+
+  #campo {
+    order: 1;
+
+    width: min(60vh, 650px);
+
+    max-width: 650px;
+
+    margin: 0;
+  }
+
+  /* MENU AO LADO DO CAMPO */
+
+  #menuArea {
+    order: 2;
+
+    position: static;
+
+    width: 220px;
+
+    flex-shrink: 0;
+  }
+
+  /* ESCONDE O ☰ NO PC */
+
+  #menuButton {
+    display: none;
+  }
+
+  /* MENU SEMPRE ABERTO NO PC */
+
+  #menuOpcoes {
+
+    position: static;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background: rgba(20,20,20,.96);
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.6);
+
+  }
+
+  /* BOTÕES UM POUCO MAIORES NO PC */
+
+  #menuOpcoes button {
+
+    padding: 12px 10px;
+
+    font-size: 14px;
+
+  }
+
+  #contador {
+
+    padding: 11px;
+
+    font-size: 14px;
+
+  }
+
+}
