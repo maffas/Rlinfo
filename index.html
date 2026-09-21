@@ -1,1188 +1,1639 @@
-<div id="app">
+<div id="app">    <!-- ========================= -->    <!-- MENU -->    <!-- ========================= -->    <div id="menuArea">  <button id="menuButton" onclick="toggleMenu()">  
+  ☰  
+</button>  
 
-  <!-- ========================= -->
-  <!-- MENU -->
-  <!-- ========================= -->
+<div id="menuOpcoes">  
 
-  <div id="menuArea">
+  <button id="boostButton" onclick="toggleBoosts()">  
+    ⚡ Boosts: ON  
+  </button>  
 
-    <button id="menuButton" onclick="toggleMenu()">
-      ☰
-    </button>
+  <button id="ballButton" onclick="toggleBall()">  
+    ⚽ Bola: ON  
+  </button>  
 
-    <div id="menuOpcoes">
+  <button class="teamButton azul" onclick="adicionarCarro('azul')">  
+    🔵 + Azul  
+  </button>  
 
-      <button id="boostButton" onclick="toggleBoosts()">
-        ⚡ Boosts: ON
-      </button>
+  <button class="teamButton laranja" onclick="adicionarCarro('laranja')">  
+    🟠 + Laranja  
+  </button>  
 
-      <button id="ballButton" onclick="toggleBall()">
-        ⚽ Bola: ON
-      </button>
+  <button id="drawButton" onclick="toggleDesenho()">  
+    ✏️ Desenhar  
+  </button>  
 
-      <button class="teamButton azul" onclick="adicionarCarro('azul')">
-        🔵 + Azul
-      </button>
+  <!-- PALETA -->  
+  <div id="corDesenhoArea">  
 
-      <button class="teamButton laranja" onclick="adicionarCarro('laranja')">
-        🟠 + Laranja
-      </button>
+    <span id="corLabel">  
+      🎨 Cor do desenho  
+    </span>  
 
-      <button id="drawButton" onclick="toggleDesenho()">
-        ✏️ Desenhar
-      </button>
+    <input  
+      type="color"  
+      id="corDesenho"  
+      value="#ffffff"  
+      title="Escolher cor do desenho"  
+    >  
 
-      <!-- PALETA -->
-      <div id="corDesenhoArea">
+  </div>  
 
-        <span id="corLabel">
-          🎨 Cor do desenho
-        </span>
+  <button id="clearDrawButton" onclick="limparDesenho()">  
+    🧹 Limpar desenho  
+  </button>  
 
-        <input
-          type="color"
-          id="corDesenho"
-          value="#ffffff"
-          title="Escolher cor do desenho"
-        >
+  <button id="lockButton" onclick="toggleLock()">  
+    🔓 Posições: LIVRES  
+  </button>  
 
-      </div>
-
-      <button id="clearDrawButton" onclick="limparDesenho()">
-        🧹 Limpar desenho
-      </button>
-
-      <button id="lockButton" onclick="toggleLock()">
-        🔓 Posições: LIVRES
-      </button>
-
-      <div id="contador">
-        🔵 0/3 &nbsp;&nbsp; 🟠 0/3
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- ========================= -->
-  <!-- CAMPO -->
-  <!-- ========================= -->
-
-  <div id="campo">
-
-    <img
-      id="campoImagem"
-      src="https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/d81db3e7-2840-48da-818c-441d3b9e7a91.png"
-    >
-
-
-    <!-- ========================= -->
-    <!-- BOOSTS -->
-    <!-- ========================= -->
-
-    <div id="boosts">
-
-      <!-- BOOSTS 100 -->
-
-      <img class="boost boost100" style="left:15.4%; top:18.0%;">
-      <img class="boost boost100" style="left:84.6%; top:18.0%;">
-
-      <img class="boost boost100" style="left:9.5%; top:48.6%;">
-      <img class="boost boost100" style="left:90.5%; top:48.6%;">
-
-      <img class="boost boost100" style="left:15.4%; top:79.7%;">
-      <img class="boost boost100" style="left:84.6%; top:79.7%;">
-
-
-      <!-- BOOSTS 12 - TOPO -->
-
-      <img class="boost boost12" style="left:29.6%; top:16.9%;">
-      <img class="boost boost12" style="left:49.9%; top:16.9%;">
-      <img class="boost boost12" style="left:70.2%; top:16.9%;">
-
-      <img class="boost boost12" style="left:39.4%; top:23.8%;">
-      <img class="boost boost12" style="left:60.6%; top:23.8%;">
-
-      <img class="boost boost12" style="left:49.9%; top:27.5%;">
-
-      <img class="boost boost12" style="left:9.6%; top:31.4%;">
-      <img class="boost boost12" style="left:29.6%; top:31.4%;">
-      <img class="boost boost12" style="left:70.2%; top:31.4%;">
-      <img class="boost boost12" style="left:90.4%; top:31.4%;">
-
-      <img class="boost boost12" style="left:26.9%; top:40.9%;">
-      <img class="boost boost12" style="left:49.9%; top:40.9%;">
-      <img class="boost boost12" style="left:73.2%; top:40.9%;">
-
-      <img class="boost boost12" style="left:38.4%; top:48.6%;">
-      <img class="boost boost12" style="left:61.6%; top:48.6%;">
-
-
-      <!-- BOOSTS 12 - BAIXO -->
-
-      <img class="boost boost12" style="left:26.9%; top:56.6%;">
-      <img class="boost boost12" style="left:73.2%; top:56.6%;">
-
-      <img class="boost boost12" style="left:9.6%; top:65.9%;">
-      <img class="boost boost12" style="left:29.6%; top:65.9%;">
-      <img class="boost boost12" style="left:70.2%; top:65.9%;">
-      <img class="boost boost12" style="left:90.4%; top:65.9%;">
-
-      <img class="boost boost12" style="left:49.9%; top:69.5%;">
-
-      <img class="boost boost12" style="left:39.4%; top:73.6%;">
-      <img class="boost boost12" style="left:60.6%; top:73.6%;">
-
-      <img class="boost boost12" style="left:29.6%; top:80.0%;">
-      <img class="boost boost12" style="left:70.2%; top:80.0%;">
-
-      <img class="boost boost12" style="left:49.9%; top:80.7%;">
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- CAMADA DE DESENHO -->
-    <!-- ========================= -->
-
-    <canvas id="desenhoCanvas"></canvas>
-
-
-    <!-- ========================= -->
-    <!-- BOLA -->
-    <!-- ========================= -->
-
-    <div id="bolaContainer">
-
-      <img
-        id="bola"
-        src="https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/62811027-db5d-4ef0-95ae-72323f59257d.webp"
-      >
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- CARROS -->
-    <!-- ========================= -->
-
-    <div id="carros"></div>
-
-
-    <!-- ========================= -->
-    <!-- BOTÃO REMOVER -->
-    <!-- ========================= -->
-
-    <button id="removerSelecionado">
-      🗑️ Remover
-    </button>
-
-  </div>
+  <div id="contador">  
+    🔵 0/3 &nbsp;&nbsp; 🟠 0/3  
+  </div>  
 
 </div>
 
+  </div>    <!-- ========================= -->    <!-- CAMPO -->    <!-- ========================= -->    <div id="campo">  <img  
+  id="campoImagem"  
+  src="https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/d81db3e7-2840-48da-818c-441d3b9e7a91.png"  
+>  
 
 
-<style>
+<!-- ========================= -->  
+<!-- BOOSTS -->  
+<!-- ========================= -->  
 
-* {
-  box-sizing: border-box;
-}
+<div id="boosts">  
 
-body {
-  margin: 0;
-  background: #111;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-}
+  <!-- BOOSTS 100 -->  
 
+  <img class="boost boost100" style="left:15.4%; top:18.0%;">  
+  <img class="boost boost100" style="left:84.6%; top:18.0%;">  
 
-/* ========================= */
-/* CAMPO */
-/* ========================= */
+  <img class="boost boost100" style="left:9.5%; top:48.6%;">  
+  <img class="boost boost100" style="left:90.5%; top:48.6%;">  
 
-#app {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+  <img class="boost boost100" style="left:15.4%; top:79.7%;">  
+  <img class="boost boost100" style="left:84.6%; top:79.7%;">  
 
-#campo {
 
-  position: relative;
+  <!-- BOOSTS 12 - TOPO -->  
 
-  width: 94vw;
+  <img class="boost boost12" style="left:29.6%; top:16.9%;">  
+  <img class="boost boost12" style="left:49.9%; top:16.9%;">  
+  <img class="boost boost12" style="left:70.2%; top:16.9%;">  
 
-  max-width: 600px;
+  <img class="boost boost12" style="left:39.4%; top:23.8%;">  
+  <img class="boost boost12" style="left:60.6%; top:23.8%;">  
 
-  margin: 0 auto;
+  <img class="boost boost12" style="left:49.9%; top:27.5%;">  
 
-  aspect-ratio: 1025 / 1536;
+  <img class="boost boost12" style="left:9.6%; top:31.4%;">  
+  <img class="boost boost12" style="left:29.6%; top:31.4%;">  
+  <img class="boost boost12" style="left:70.2%; top:31.4%;">  
+  <img class="boost boost12" style="left:90.4%; top:31.4%;">  
 
-}
+  <img class="boost boost12" style="left:26.9%; top:40.9%;">  
+  <img class="boost boost12" style="left:49.9%; top:40.9%;">  
+  <img class="boost boost12" style="left:73.2%; top:40.9%;">  
 
+  <img class="boost boost12" style="left:38.4%; top:48.6%;">  
+  <img class="boost boost12" style="left:61.6%; top:48.6%;">  
 
-/* ========================= */
-/* IMAGEM DO CAMPO */
-/* ========================= */
 
-#campoImagem {
+  <!-- BOOSTS 12 - BAIXO -->  
 
-  position: absolute;
+  <img class="boost boost12" style="left:26.9%; top:56.6%;">  
+  <img class="boost boost12" style="left:73.2%; top:56.6%;">  
 
-  width: 100%;
-  height: 100%;
-
-  object-fit: contain;
-
-  left: 0;
-  top: 0;
-
-}
-
-
-/* ========================= */
-/* MENU */
-/* ========================= */
-
-#menuArea {
-
-  position: fixed;
-
-  top: 12px;
-
-  right: 12px;
-
-  z-index: 3000;
-
-}
-
-
-/* BOTÃO ☰ */
-
-#menuButton {
-
-  width: 48px;
-  height: 48px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background: rgba(25,25,25,.95);
-
-  color: white;
-
-  font-size: 25px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  box-shadow: 0 4px 15px rgba(0,0,0,.5);
-
-}
-
-#menuButton:active {
-  transform: scale(.93);
-}
-
-
-/* OPÇÕES */
-
-#menuOpcoes {
-
-  position: absolute;
-
-  right: 0;
-
-  top: 56px;
-
-  width: 185px;
-
-  display: none;
-
-  flex-direction: column;
-
-  gap: 7px;
-
-  padding: 10px;
-
-  border-radius: 12px;
-
-  background: rgba(20,20,20,.96);
-
-  box-shadow: 0 5px 25px rgba(0,0,0,.6);
-
-}
-
-#menuOpcoes.aberto {
-  display: flex;
-}
-
-
-/* BOTÕES DO MENU */
-
-#menuOpcoes button {
-
-  width: 100%;
-
-  border: none;
-
-  padding: 10px 9px;
-
-  border-radius: 8px;
-
-  color: white;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,.35);
-
-}
-
-#menuOpcoes button:active {
-  transform: scale(.96);
-}
-
-
-#boostButton {
-  background: #292929;
-}
-
-#ballButton {
-  background: #292929;
-}
-
-.azul {
-  background: #1769ff;
-}
-
-.laranja {
-  background: #f07800;
-}
-
-#drawButton {
-  background: #673ab7;
-}
-
-#clearDrawButton {
-  background: #444;
-}
-
-#lockButton {
-  background: #333;
-}
-
-
-/* ========================= */
-/* PALETA DE COR */
-/* ========================= */
-
-#corDesenhoArea {
-
-  width: 100%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 8px;
-
-  padding: 7px 8px;
-
-  border-radius: 8px;
-
-  background: #292929;
-
-  color: white;
-
-  font-size: 12px;
-
-  font-weight: bold;
-
-}
-
-
-/* TEXTO */
-
-#corLabel {
-  white-space: nowrap;
-}
-
-
-/* SELETOR DE COR */
-
-#corDesenho {
-
-  width: 42px;
-
-  height: 30px;
-
-  padding: 2px;
-
-  border: 2px solid white;
-
-  border-radius: 6px;
-
-  background: transparent;
-
-  cursor: pointer;
-
-}
-
-
-/* CONTADOR */
-
-#contador {
-
-  background: rgba(0,0,0,.8);
-
-  color: white;
-
-  padding: 9px;
-
-  border-radius: 8px;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  text-align: center;
-
-}
-
-
-/* ========================= */
-/* BOOSTS */
-/* ========================= */
-
-#boosts {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 10;
-
-}
-
-.boost {
-
-  position: absolute;
-
-  transform: translate(-50%, -50%);
-
-  object-fit: contain;
-
-  pointer-events: none;
-
-}
-
-.boost100 {
-
-  width: 5.5%;
-
-  content: url(
-    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/fc9f4a00-fa79-417f-ba8e-8d6a45eae868.webp"
-  );
-
-}
-
-.boost12 {
-
-  width: 4.3%;
-
-  content: url(
-    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/67c1f383-756d-45e8-b20e-66ade5ca0547.png"
-  );
-
-}
-
-
-/* ========================= */
-/* DESENHO */
-/* ========================= */
-
-#desenhoCanvas {
-
-  position: absolute;
-
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 70;
-
-  pointer-events: none;
-
-  touch-action: none;
-
-}
-
-
-/* ========================= */
-/* BOLA */
-/* ========================= */
-
-#bolaContainer {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 80;
-
-  pointer-events: none;
-
-}
-
-#bola {
-
-  position: absolute;
-
-  width: 12%;
-
-  height: auto;
-
-  left: 50%;
-
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  user-select: none;
-
-  -webkit-user-select: none;
-
-  touch-action: none;
-
-  pointer-events: auto;
-
-  cursor: grab;
-
-  filter:
-    drop-shadow(0 0 1px white)
-    drop-shadow(0 0 2px white)
-    drop-shadow(0 0 3px white);
-
-}
-
-#bola:active {
-  cursor: grabbing;
-}
-
-
-/* ========================= */
-/* CARROS */
-/* ========================= */
-
-#carros {
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 100;
-
-  pointer-events: none;
-
-}
-
-.carro {
-
-  position: absolute;
-
-  width: 12%;
-
-  height: auto;
-
-  transform: translate(-50%, -50%);
-
-  user-select: none;
-
-  -webkit-user-select: none;
-
-  touch-action: none;
-
-  cursor: grab;
-
-  pointer-events: auto;
-
-  filter:
-    drop-shadow(0 0 1px white)
-    drop-shadow(0 0 2px white)
-    drop-shadow(0 0 3px white);
-
-}
-
-.carro:active {
-  cursor: grabbing;
-}
-
-.carro.azul {
-
-  content: url(
-    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/7c659686-df39-4dee-8d30-ca83f050daae.png"
-  );
-
-}
-
-.carro.laranja {
-
-  content: url(
-    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/1ef8017f-56b2-4f87-8531-8c1a72c8b54f.png"
-  );
-
-}
-
-
-/* ========================= */
-/* REMOVER */
-/* ========================= */
-
-#removerSelecionado {
-
-  position: absolute;
-
-  display: none;
-
-  z-index: 500;
-
-  transform: translate(-50%, -100%);
-
-  padding: 7px 11px;
-
-  border: none;
-
-  border-radius: 7px;
-
-  background: #d32f2f;
-
-  color: white;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  white-space: nowrap;
-
-  cursor: pointer;
-
-  box-shadow: 0 3px 10px rgba(0,0,0,.5);
-
-}
-
-#removerSelecionado:active {
-
-  transform:
-    translate(-50%, -100%)
-    scale(.94);
-
-}
-
-</style>
-
-
-
-<script>
-
-/* ========================= */
-/* CONFIGURAÇÃO */
-/* ========================= */
-
-let quantidadeAzul = 0;
-
-let quantidadeLaranja = 0;
-
-let carrosCriados = [];
-
-const MAX_CARROS = 6;
-
-
-/* ========================= */
-/* ESTADOS */
-/* ========================= */
-
-let boostsAtivos = true;
-
-let bolaAtiva = true;
-
-let posicoesBloqueadas = false;
-
-let carroSelecionado = null;
-
-let desenhoAtivo = false;
-
-
-/* ========================= */
-/* MENU */
-/* ========================= */
-
-function toggleMenu() {
-
-  const menu =
-    document.getElementById("menuOpcoes");
-
-  menu.classList.toggle("aberto");
-
-}
-
-
-/* ========================= */
-/* BOOSTS */
-/* ========================= */
-
-function toggleBoosts() {
-
-  boostsAtivos = !boostsAtivos;
-
-  const boosts =
-    document.getElementById("boosts");
-
-  const button =
-    document.getElementById("boostButton");
-
-
-  if (boostsAtivos) {
-
-    boosts.style.display = "block";
-
-    button.innerText =
-      "⚡ Boosts: ON";
-
-  } else {
-
-    boosts.style.display = "none";
-
-    button.innerText =
-      "⚡ Boosts: OFF";
-
-  }
-
-}
-
-
-/* ========================= */
-/* BOLA */
-/* ========================= */
-
-function toggleBall() {
-
-  bolaAtiva = !bolaAtiva;
-
-  const bola =
-    document.getElementById("bola");
-
-  const button =
-    document.getElementById("ballButton");
-
-
-  if (bolaAtiva) {
-
-    bola.style.display = "block";
-
-    button.innerText =
-      "⚽ Bola: ON";
-
-  } else {
-
-    bola.style.display = "none";
-
-    button.innerText =
-      "⚽ Bola: OFF";
-
-  }
-
-}
-
-
-/* ========================= */
-/* LOCK */
-/* ========================= */
-
-function toggleLock() {
-
-  posicoesBloqueadas =
-    !posicoesBloqueadas;
-
-  const button =
-    document.getElementById("lockButton");
-
-
-  if (posicoesBloqueadas) {
-
-    button.innerText =
-      "🔒 Posições: BLOQUEADAS";
-
-    esconderRemover();
-
-    if (desenhoAtivo) {
-      toggleDesenho();
-    }
-
-  } else {
-
-    button.innerText =
-      "🔓 Posições: LIVRES";
-
-  }
-
-}
-
-
-/* ========================= */
-/* DESENHO */
-/* ========================= */
-
-const canvas =
-  document.getElementById("desenhoCanvas");
-
-const ctx =
-  canvas.getContext("2d");
-
-
-function ajustarCanvas() {
-
-  const campo =
-    document.getElementById("campo");
-
-  const rect =
-    campo.getBoundingClientRect();
-
-  const dpr =
-    window.devicePixelRatio || 1;
-
-  canvas.width =
-    rect.width * dpr;
-
-  canvas.height =
-    rect.height * dpr;
-
-  canvas.style.width =
-    rect.width + "px";
-
-  canvas.style.height =
-    rect.height + "px";
-
-  ctx.setTransform(
-    dpr,
-    0,
-    0,
-    dpr,
-    0,
-    0
-  );
-
-}
-
-
-ajustarCanvas();
-
-window.addEventListener(
-  "resize",
-  ajustarCanvas
-);
-
-
-/* ========================= */
-/* PALETA */
-/* ========================= */
-
-const seletorCor =
-  document.getElementById("corDesenho");
-
-
-seletorCor.addEventListener(
-  "input",
-  function() {
-
-    ctx.strokeStyle =
-      seletorCor.value;
-
-  }
-);
-
-
-/* ========================= */
-/* DESENHAR */
-/* ========================= */
-
-function toggleDesenho() {
-
-  if (posicoesBloqueadas) {
-    return;
-  }
-
-  desenhoAtivo = !desenhoAtivo;
-
-  const button =
-    document.getElementById("drawButton");
-
-
-  if (desenhoAtivo) {
-
-    canvas.style.pointerEvents =
-      "auto";
-
-    button.innerText =
-      "✏️ Desenho: ON";
-
-    button.style.background =
-      seletorCor.value;
-
-  } else {
-
-    canvas.style.pointerEvents =
-      "none";
-
-    button.innerText =
-      "✏️ Desenhar";
-
-    button.style.background =
-      "#673ab7";
-
-  }
-
-}
-
-
-let desenhando = false;
-
-
-canvas.addEventListener(
-  "pointerdown",
-  function(event) {
-
-    if (!desenhoAtivo) {
-      return;
-    }
-
-    event.preventDefault();
-
-    desenhando = true;
-
-    canvas.setPointerCapture(
-      event.pointerId
-    );
-
-    const pos =
-      pegarPosicaoCanvas(event);
-
-    ctx.beginPath();
-
-    ctx.strokeStyle =
-      seletorCor.value;
-
-    ctx.moveTo(
-      pos.x,
-      pos.y
-    );
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointermove",
-  function(event) {
-
-    if (
-      !desenhando ||
-      !desenhoAtivo
-    ) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const pos =
-      pegarPosicaoCanvas(event);
-
-    ctx.lineTo(
-      pos.x,
-      pos.y
-    );
-
-    ctx.stroke();
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointerup",
-  function(event) {
-
-    desenhando = false;
-
-    try {
-
-      canvas.releasePointerCapture(
-        event.pointerId
-      );
-
-    } catch(e) {}
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointercancel",
-  function() {
-
-    desenhando = false;
-
-  }
-);
-
-
-function pegarPosicaoCanvas(event) {
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  return {
-
-    x:
-      event.clientX -
-      rect.left,
-
-    y:
-      event.clientY -
-      rect.top
-
-  };
-
-}
-
-
-/* CONFIGURAÇÃO DO LÁPIS */
-
-ctx.lineWidth = 4;
-
-ctx.lineCap = "round";
-
-ctx.lineJoin = "round";
-
-ctx.strokeStyle = "#ffffff";
-
-
-/* ========================= */
-/* LIMPAR DESENHO */
-/* ========================= */
-
-function limparDesenho() {
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  ctx.clearRect(
-    0,
-    0,
-    rect.width,
-    rect.height
-  );
-
-}
-
-
-/* ========================= */
-/* ADICIONAR CARRO */
-/* ========================= */
-
-function adicionarCarro(time) {
-
-  if (
-    time === "azul" &&
-    quantidadeAzul >= 3
-  ) {
-
-    alert(
-      "Máximo de 3 carros azuis!"
-    );
-
-    return;
-
-  }
-
-
-  if (
-    time === "laranja" &&
-    quantidadeLaranja >= 3
-  ) {
-
-    alert(
-      "Máximo de 3 carros laranjas!"
-    );
-
-    return;
-
-  }
-
-
-  if (
-    carrosCriados.length >= MAX_CARROS
-  ) {
-
-    alert(
-      "Máximo de 6 carros!"
-    );
-
-    return;
-
-  }
-
-
-  const carro =
-    document.createElement("img");
-
-  carro.className =
-    "carro " + time;
-
-
-  let posicaoX;
-
-  let posicaoY;
-
-
-  if (time === "azul") {
-
-    posicaoX =
-      35 + quantidadeAzul * 10;
-
-    posicaoY =
-      75 - quantidadeAzul * 8;
-
-  } else {
-
-    posicaoX =
-      35 + quantidadeLaranja * 10;
-
-    posicaoY =
-      25 + quantidadeLaranja * 8;
-
-  }
-
-
-  carro.style.left =
-    posicaoX + "%";
-
-  carro.style.top =
-    posicaoY + "%";
-
-
-  document
-    .getElementById("carros")
-    .appendChild(carro);
-
-
-  carrosCriados.push(carro);
+  <img class="boost boost12" style="left:9.6%; top:65.9%;">  
+  <img class="boost boost12" style="left:29.6%; top:65.9%;">  
+  <img class="boost boost12" style="left:70.2%; top:65.9%;">  
+  <img class="boost boost12" style="left:90.4%; top:65.9%;">  
+
+  <img class="boost boost12" style="left:49.9%; top:69.5%;">  
+
+  <img class="boost boost12" style="left:39.4%; top:73.6%;">  
+  <img class="boost boost12" style="left:60.6%; top:73.6%;">  
+
+  <img class="boost boost12" style="left:29.6%; top:80.0%;">  
+  <img class="boost boost12" style="left:70.2%; top:80.0%;">  
+
+  <img class="boost boost12" style="left:49.9%; top:80.7%;">  
+
+</div>  
+
+
+<!-- ========================= -->  
+<!-- CAMADA DE DESENHO -->  
+<!-- ========================= -->  
+
+<canvas id="desenhoCanvas"></canvas>  
+
+
+<!-- ========================= -->  
+<!-- BOLA -->  
+<!-- ========================= -->  
+
+<div id="bolaContainer">  
+
+  <img  
+    id="bola"  
+    src="https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/62811027-db5d-4ef0-95ae-72323f59257d.webp"  
+  >  
+
+</div>  
+
+
+<!-- ========================= -->  
+<!-- CARROS -->  
+<!-- ========================= -->  
+
+<div id="carros"></div>  
+
+
+<!-- ========================= -->  
+<!-- BOTÃO REMOVER -->  
+<!-- ========================= -->  
+
+<button id="removerSelecionado">  
+  🗑️ Remover  
+</button>
+
+  </div>  </div>  <style>  
+  
+* {  
+  box-sizing: border-box;  
+}  
+  
+body {  
+  margin: 0;  
+  background: #111;  
+  font-family: Arial, sans-serif;  
+  overflow-x: hidden;  
+}  
+  
+  
+/* ========================= */  
+/* CAMPO */  
+/* ========================= */  
+  
+#app {  
+  padding-top: 20px;  
+  padding-bottom: 20px;  
+}  
+  
+#campo {  
+  
+  position: relative;  
+  
+  width: 94vw;  
+  
+  max-width: 600px;  
+  
+  margin: 0 auto;  
+  
+  aspect-ratio: 1025 / 1536;  
+  
+}  
+  
+  
+/* ========================= */  
+/* IMAGEM DO CAMPO */  
+/* ========================= */  
+  
+#campoImagem {  
+  
+  position: absolute;  
+  
+  width: 100%;  
+  height: 100%;  
+  
+  object-fit: contain;  
+  
+  left: 0;  
+  top: 0;  
+  
+}  
+  
+  
+/* ========================= */  
+/* MENU */  
+/* ========================= */  
+  
+#menuArea {  
+  
+  position: fixed;  
+  
+  top: 12px;  
+  
+  right: 12px;  
+  
+  z-index: 3000;  
+  
+}  
+  
+  
+/* BOTÃO ☰ */  
+  
+#menuButton {  
+  
+  width: 48px;  
+  height: 48px;  
+  
+  border: none;  
+  
+  border-radius: 12px;  
+  
+  background: rgba(25,25,25,.95);  
+  
+  color: white;  
+  
+  font-size: 25px;  
+  
+  font-weight: bold;  
+  
+  cursor: pointer;  
+  
+  box-shadow: 0 4px 15px rgba(0,0,0,.5);  
+  
+}  
+  
+#menuButton:active {  
+  transform: scale(.93);  
+}  
+  
+  
+/* OPÇÕES */  
+  
+#menuOpcoes {  
+  
+  position: absolute;  
+  
+  right: 0;  
+  
+  top: 56px;  
+  
+  width: 185px;  
+  
+  display: none;  
+  
+  flex-direction: column;  
+  
+  gap: 7px;  
+  
+  padding: 10px;  
+  
+  border-radius: 12px;  
+  
+  background: rgba(20,20,20,.96);  
+  
+  box-shadow: 0 5px 25px rgba(0,0,0,.6);  
+  
+}  
+  
+#menuOpcoes.aberto {  
+  display: flex;  
+}  
+  
+  
+/* BOTÕES DO MENU */  
+  
+#menuOpcoes button {  
+  
+  width: 100%;  
+  
+  border: none;  
+  
+  padding: 10px 9px;  
+  
+  border-radius: 8px;  
+  
+  color: white;  
+  
+  font-size: 13px;  
+  
+  font-weight: bold;  
+  
+  cursor: pointer;  
+  
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);  
+  
+}  
+  
+#menuOpcoes button:active {  
+  transform: scale(.96);  
+}  
+  
+  
+#boostButton {  
+  background: #292929;  
+}  
+  
+#ballButton {  
+  background: #292929;  
+}  
+  
+.azul {  
+  background: #1769ff;  
+}  
+  
+.laranja {  
+  background: #f07800;  
+}  
+  
+#drawButton {  
+  background: #673ab7;  
+}  
+  
+#clearDrawButton {  
+  background: #444;  
+}  
+  
+#lockButton {  
+  background: #333;  
+}  
+  
+  
+/* ========================= */  
+/* PALETA DE COR */  
+/* ========================= */  
+  
+#corDesenhoArea {  
+  
+  width: 100%;  
+  
+  display: flex;  
+  
+  align-items: center;  
+  
+  justify-content: space-between;  
+  
+  gap: 8px;  
+  
+  padding: 7px 8px;  
+  
+  border-radius: 8px;  
+  
+  background: #292929;  
+  
+  color: white;  
+  
+  font-size: 12px;  
+  
+  font-weight: bold;  
+  
+}  
+  
+  
+/* TEXTO */  
+  
+#corLabel {  
+  white-space: nowrap;  
+}  
+  
+  
+/* SELETOR DE COR */  
+  
+#corDesenho {  
+  
+  width: 42px;  
+  
+  height: 30px;  
+  
+  padding: 2px;  
+  
+  border: 2px solid white;  
+  
+  border-radius: 6px;  
+  
+  background: transparent;  
+  
+  cursor: pointer;  
+  
+}  
+  
+  
+/* CONTADOR */  
+  
+#contador {  
+  
+  background: rgba(0,0,0,.8);  
+  
+  color: white;  
+  
+  padding: 9px;  
+  
+  border-radius: 8px;  
+  
+  font-size: 13px;  
+  
+  font-weight: bold;  
+  
+  text-align: center;  
+  
+}  
+  
+  
+/* ========================= */  
+/* BOOSTS */  
+/* ========================= */  
+  
+#boosts {  
+  
+  position: absolute;  
+  
+  inset: 0;  
+  
+  z-index: 10;  
+  
+}  
+  
+.boost {  
+  
+  position: absolute;  
+  
+  transform: translate(-50%, -50%);  
+  
+  object-fit: contain;  
+  
+  pointer-events: none;  
+  
+}  
+  
+.boost100 {  
+  
+  width: 5.5%;  
+  
+  content: url(  
+    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/fc9f4a00-fa79-417f-ba8e-8d6a45eae868.webp"  
+  );  
+  
+}  
+  
+.boost12 {  
+  
+  width: 4.3%;  
+  
+  content: url(  
+    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/67c1f383-756d-45e8-b20e-66ade5ca0547.png"  
+  );  
+  
+}  
+  
+  
+/* ========================= */  
+/* DESENHO */  
+/* ========================= */  
+  
+#desenhoCanvas {  
+  
+  position: absolute;  
+  
+  inset: 0;  
+  
+  width: 100%;  
+  height: 100%;  
+  
+  z-index: 70;  
+  
+  pointer-events: none;  
+  
+  touch-action: none;  
+  
+}  
+  
+  
+/* ========================= */  
+/* BOLA */  
+/* ========================= */  
+  
+#bolaContainer {  
+  
+  position: absolute;  
+  
+  inset: 0;  
+  
+  z-index: 80;  
+  
+  pointer-events: none;  
+  
+}  
+  
+#bola {  
+  
+  position: absolute;  
+  
+  width: 12%;  
+  
+  height: auto;  
+  
+  left: 50%;  
+  
+  top: 50%;  
+  
+  transform: translate(-50%, -50%);  
+  
+  user-select: none;  
+  
+  -webkit-user-select: none;  
+  
+  touch-action: none;  
+  
+  pointer-events: auto;  
+  
+  cursor: grab;  
+  
+  filter:  
+    drop-shadow(0 0 1px white)  
+    drop-shadow(0 0 2px white)  
+    drop-shadow(0 0 3px white);  
+  
+}  
+  
+#bola:active {  
+  cursor: grabbing;  
+}  
+  
+  
+/* ========================= */  
+/* CARROS */  
+/* ========================= */  
+  
+#carros {  
+  
+  position: absolute;  
+  
+  inset: 0;  
+  
+  z-index: 100;  
+  
+  pointer-events: none;  
+  
+}  
+  
+.carro {  
+  
+  position: absolute;  
+  
+  width: 12%;  
+  
+  height: auto;  
+  
+  transform: translate(-50%, -50%);  
+  
+  user-select: none;  
+  
+  -webkit-user-select: none;  
+  
+  touch-action: none;  
+  
+  cursor: grab;  
+  
+  pointer-events: auto;  
+  
+  filter:  
+    drop-shadow(0 0 1px white)  
+    drop-shadow(0 0 2px white)  
+    drop-shadow(0 0 3px white);  
+  
+}  
+  
+.carro:active {  
+  cursor: grabbing;  
+}  
+  
+.carro.azul {  
+  
+  content: url(  
+    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/7c659686-df39-4dee-8d30-ca83f050daae.png"  
+  );  
+  
+}  
+  
+.carro.laranja {  
+  
+  content: url(  
+    "https://i.supaimg.com/c4ca8cf3-59f6-45ac-b963-10d3f136dacb/1ef8017f-56b2-4f87-8531-8c1a72c8b54f.png"  
+  );  
+  
+}  
+  
+  
+/* ========================= */  
+/* REMOVER */  
+/* ========================= */  
+  
+#removerSelecionado {  
+  
+  position: absolute;  
+  
+  display: none;  
+  
+  z-index: 500;  
+  
+  transform: translate(-50%, -100%);  
+  
+  padding: 7px 11px;  
+  
+  border: none;  
+  
+  border-radius: 7px;  
+  
+  background: #d32f2f;  
+  
+  color: white;  
+  
+  font-size: 13px;  
+  
+  font-weight: bold;  
+  
+  white-space: nowrap;  
+  
+  cursor: pointer;  
+  
+  box-shadow: 0 3px 10px rgba(0,0,0,.5);  
+  
+}  
+  
+#removerSelecionado:active {  
+  
+  transform:  
+    translate(-50%, -100%)  
+    scale(.94);  
+  
+}  
+  
+</style>  <script>  
+  
+/* ========================= */  
+/* CONFIGURAÇÃO */  
+/* ========================= */  
+  
+let quantidadeAzul = 0;  
+  
+let quantidadeLaranja = 0;  
+  
+let carrosCriados = [];  
+  
+const MAX_CARROS = 6;  
+  
+  
+/* ========================= */  
+/* ESTADOS */  
+/* ========================= */  
+  
+let boostsAtivos = true;  
+  
+let bolaAtiva = true;  
+  
+let posicoesBloqueadas = false;  
+  
+let carroSelecionado = null;  
+  
+let desenhoAtivo = false;  
+  
+  
+/* ========================= */  
+/* MENU */  
+/* ========================= */  
+  
+function toggleMenu() {  
+  
+  const menu =  
+    document.getElementById("menuOpcoes");  
+  
+  menu.classList.toggle("aberto");  
+  
+}  
+  
+  
+/* ========================= */  
+/* BOOSTS */  
+/* ========================= */  
+  
+function toggleBoosts() {  
+  
+  boostsAtivos = !boostsAtivos;  
+  
+  const boosts =  
+    document.getElementById("boosts");  
+  
+  const button =  
+    document.getElementById("boostButton");  
+  
+  
+  if (boostsAtivos) {  
+  
+    boosts.style.display = "block";  
+  
+    button.innerText =  
+      "⚡ Boosts: ON";  
+  
+  } else {  
+  
+    boosts.style.display = "none";  
+  
+    button.innerText =  
+      "⚡ Boosts: OFF";  
+  
+  }  
+  
+}  
+  
+  
+/* ========================= */  
+/* BOLA */  
+/* ========================= */  
+  
+function toggleBall() {  
+  
+  bolaAtiva = !bolaAtiva;  
+  
+  const bola =  
+    document.getElementById("bola");  
+  
+  const button =  
+    document.getElementById("ballButton");  
+  
+  
+  if (bolaAtiva) {  
+  
+    bola.style.display = "block";  
+  
+    button.innerText =  
+      "⚽ Bola: ON";  
+  
+  } else {  
+  
+    bola.style.display = "none";  
+  
+    button.innerText =  
+      "⚽ Bola: OFF";  
+  
+  }  
+  
+}  
+  
+  
+/* ========================= */  
+/* LOCK */  
+/* ========================= */  
+  
+function toggleLock() {  
+  
+  posicoesBloqueadas =  
+    !posicoesBloqueadas;  
+  
+  const button =  
+    document.getElementById("lockButton");  
+  
+  
+  if (posicoesBloqueadas) {  
+  
+    button.innerText =  
+      "🔒 Posições: BLOQUEADAS";  
+  
+    esconderRemover();  
+  
+    if (desenhoAtivo) {  
+      toggleDesenho();  
+    }  
+  
+  } else {  
+  
+    button.innerText =  
+      "🔓 Posições: LIVRES";  
+  
+  }  
+  
+}  
+  
+  
+/* ========================= */  
+/* DESENHO */  
+/* ========================= */  
+  
+const canvas =  
+  document.getElementById("desenhoCanvas");  
+  
+const ctx =  
+  canvas.getContext("2d");  
+  
+  
+function ajustarCanvas() {  
+  
+  const campo =  
+    document.getElementById("campo");  
+  
+  const rect =  
+    campo.getBoundingClientRect();  
+  
+  const dpr =  
+    window.devicePixelRatio || 1;  
+  
+  canvas.width =  
+    rect.width * dpr;  
+  
+  canvas.height =  
+    rect.height * dpr;  
+  
+  canvas.style.width =  
+    rect.width + "px";  
+  
+  canvas.style.height =  
+    rect.height + "px";  
+  
+  ctx.setTransform(  
+    dpr,  
+    0,  
+    0,  
+    dpr,  
+    0,  
+    0  
+  );  
+  
+}  
+  
+  
+ajustarCanvas();  
+  
+window.addEventListener(  
+  "resize",  
+  ajustarCanvas  
+);  
+  
+  
+/* ========================= */  
+/* PALETA */  
+/* ========================= */  
+  
+const seletorCor =  
+  document.getElementById("corDesenho");  
+  
+  
+seletorCor.addEventListener(  
+  "input",  
+  function() {  
+  
+    ctx.strokeStyle =  
+      seletorCor.value;  
+  
+  }  
+);  
+  
+  
+/* ========================= */  
+/* DESENHAR */  
+/* ========================= */  
+  
+function toggleDesenho() {  
+  
+  if (posicoesBloqueadas) {  
+    return;  
+  }  
+  
+  desenhoAtivo = !desenhoAtivo;  
+  
+  const button =  
+    document.getElementById("drawButton");  
+  
+  
+  if (desenhoAtivo) {  
+  
+    canvas.style.pointerEvents =  
+      "auto";  
+  
+    button.innerText =  
+      "✏️ Desenho: ON";  
+  
+    button.style.background =  
+      seletorCor.value;  
+  
+  } else {  
+  
+    canvas.style.pointerEvents =  
+      "none";  
+  
+    button.innerText =  
+      "✏️ Desenhar";  
+  
+    button.style.background =  
+      "#673ab7";  
+  
+  }  
+  
+}  
+  
+  
+let desenhando = false;  
+  
+  
+canvas.addEventListener(  
+  "pointerdown",  
+  function(event) {  
+  
+    if (!desenhoAtivo) {  
+      return;  
+    }  
+  
+    event.preventDefault();  
+  
+    desenhando = true;  
+  
+    canvas.setPointerCapture(  
+      event.pointerId  
+    );  
+  
+    const pos =  
+      pegarPosicaoCanvas(event);  
+  
+    ctx.beginPath();  
+  
+    ctx.strokeStyle =  
+      seletorCor.value;  
+  
+    ctx.moveTo(  
+      pos.x,  
+      pos.y  
+    );  
+  
+  }  
+);  
+  
+  
+canvas.addEventListener(  
+  "pointermove",  
+  function(event) {  
+  
+    if (  
+      !desenhando ||  
+      !desenhoAtivo  
+    ) {  
+      return;  
+    }  
+  
+    event.preventDefault();  
+  
+    const pos =  
+      pegarPosicaoCanvas(event);  
+  
+    ctx.lineTo(  
+      pos.x,  
+      pos.y  
+    );  
+  
+    ctx.stroke();  
+  
+  }  
+);  
+  
+  
+canvas.addEventListener(  
+  "pointerup",  
+  function(event) {  
+  
+    desenhando = false;  
+  
+    try {  
+  
+      canvas.releasePointerCapture(  
+        event.pointerId  
+      );  
+  
+    } catch(e) {}  
+  
+  }  
+);  
+  
+  
+canvas.addEventListener(  
+  "pointercancel",  
+  function() {  
+  
+    desenhando = false;  
+  
+  }  
+);  
+  
+  
+function pegarPosicaoCanvas(event) {  
+  
+  const rect =  
+    canvas.getBoundingClientRect();  
+  
+  return {  
+  
+    x:  
+      event.clientX -  
+      rect.left,  
+  
+    y:  
+      event.clientY -  
+      rect.top  
+  
+  };  
+  
+}  
+  
+  
+/* CONFIGURAÇÃO DO LÁPIS */  
+  
+ctx.lineWidth = 4;  
+  
+ctx.lineCap = "round";  
+  
+ctx.lineJoin = "round";  
+  
+ctx.strokeStyle = "#ffffff";  
+  
+  
+/* ========================= */  
+/* LIMPAR DESENHO */  
+/* ========================= */  
+  
+function limparDesenho() {  
+  
+  const rect =  
+    canvas.getBoundingClientRect();  
+  
+  ctx.clearRect(  
+    0,  
+    0,  
+    rect.width,  
+    rect.height  
+  );  
+  
+}  
+  
+  
+/* ========================= */  
+/* ADICIONAR CARRO */  
+/* ========================= */  
+  
+function adicionarCarro(time) {  
+  
+  if (  
+    time === "azul" &&  
+    quantidadeAzul >= 3  
+  ) {  
+  
+    alert(  
+      "Máximo de 3 carros azuis!"  
+    );  
+  
+    return;  
+  
+  }  
+  
+  
+  if (  
+    time === "laranja" &&  
+    quantidadeLaranja >= 3  
+  ) {  
+  
+    alert(  
+      "Máximo de 3 carros laranjas!"  
+    );  
+  
+    return;  
+  
+  }  
+  
+  
+  if (  
+    carrosCriados.length >= MAX_CARROS  
+  ) {  
+  
+    alert(  
+      "Máximo de 6 carros!"  
+    );  
+  
+    return;  
+  
+  }  
+  
+  
+  const carro =  
+    document.createElement("img");  
+  
+  carro.className =  
+    "carro " + time;  
+  
+  
+  let posicaoX;  
+  
+  let posicaoY;  
+  
+  
+  if (time === "azul") {  
+  
+    posicaoX =  
+      35 + quantidadeAzul * 10;  
+  
+    posicaoY =  
+      75 - quantidadeAzul * 8;  
+  
+  } else {  
+  
+    posicaoX =  
+      35 + quantidadeLaranja * 10;  
+  
+    posicaoY =  
+      25 + quantidadeLaranja * 8;  
+  
+  }  
+  
+  
+  carro.style.left =  
+    posicaoX + "%";  
+  
+  carro.style.top =  
+    posicaoY + "%";  
+  
+  
+  document  
+    .getElementById("carros")  
+    .appendChild(carro);  
+  
+  
+  carrosCriados.push(carro);  
+  
+  
+  if (time === "azul") {  
+  
+    quantidadeAzul++;  
+  
+  } else {  
+  
+    quantidadeLaranja++;  
+  
+  }  
+  
+  
+  atualizarContador();  
+  
+  tornarArrastavel(carro);  
+  
+}  
+  
+  
+/* ========================= */  
+/* CONTADOR */  
+/* ========================= */  
+  
+function atualizarContador() {  
+  
+  document.getElementById(  
+    "contador"  
+  ).innerHTML =  
+  
+    "🔵 " +  
+    quantidadeAzul +  
+    "/3 &nbsp;&nbsp; 🟠 " +  
+    quantidadeLaranja +  
+    "/3";  
+  
+}  
+  
+  
+/* ========================= */  
+/* SELECIONAR CARRO */  
+/* ========================= */  
+  
+function selecionarCarro(carro) {  
+  
+  carroSelecionado = carro;  
+  
+  const botao =  
+    document.getElementById(  
+      "removerSelecionado"  
+    );  
+  
+  
+  const x =  
+    parseFloat(carro.style.left);  
+  
+  const y =  
+    parseFloat(carro.style.top);  
+  
+  
+  botao.style.left =  
+    x + "%";  
+  
+  botao.style.top =  
+    (y - 2) + "%";  
+  
+  botao.style.display =  
+    "block";  
+  
+}  
+  
+  
+/* ========================= */  
+/* ESCONDER REMOVER */  
+/* ========================= */  
+  
+function esconderRemover() {  
+  
+  carroSelecionado = null;  
+  
+  document  
+    .getElementById(  
+      "removerSelecionado"  
+    )  
+    .style.display = "none";  
+  
+}  
+  
+  
+/* ========================= */  
+/* REMOVER CARRO */  
+/* ========================= */  
+  
+function removerCarroSelecionado() {  
+  
+  if (!carroSelecionado) {  
+    return;  
+  }  
+  
+  
+  if (  
+    carroSelecionado  
+      .classList  
+      .contains("azul")  
+  ) {  
+  
+    quantidadeAzul--;  
+  
+  } else {  
+  
+    quantidadeLaranja--;  
+  
+  }  
+  
+  
+  const indice =  
+    carrosCriados.indexOf(  
+      carroSelecionado  
+    );  
+  
+  
+  if (indice !== -1) {  
+  
+    carrosCriados.splice(  
+      indice,  
+      1  
+    );  
+  
+  }  
+  
+  
+  carroSelecionado.remove();  
+  
+  atualizarContador();  
+  
+  esconderRemover();  
+  
+}  
+  
+  
+/* ========================= */  
+/* ARRASTAR CARRO */  
+/* ========================= */  
+  
+function tornarArrastavel(carro) {  
+  
+  let arrastando = false;  
+  
+  
+  carro.addEventListener(  
+    "dblclick",  
+    function(event) {  
+  
+      event.preventDefault();  
+  
+      event.stopPropagation();  
+  
+  
+      if (posicoesBloqueadas) {  
+        return;  
+      }  
+  
+  
+      selecionarCarro(carro);  
+  
+    }  
+  );  
+  
+  
+  carro.addEventListener(  
+    "pointerdown",  
+    function(event) {  
+  
+      if (desenhoAtivo) {  
+        return;  
+      }  
+  
+      event.preventDefault();  
+  
+      arrastando = true;  
+  
+      carro.setPointerCapture(  
+        event.pointerId  
+      );  
+  
+    }  
+  );  
+  
+  
+  carro.addEventListener(  
+    "pointermove",  
+    function(event) {  
+  
+      if (  
+        !arrastando ||  
+        posicoesBloqueadas ||  
+        desenhoAtivo  
+      ) {  
+        return;  
+      }  
+  
+  
+      moverElemento(  
+        carro,  
+        event  
+      );  
+  
+  
+      if (  
+        carroSelecionado === carro  
+      ) {  
+  
+        atualizarBotaoRemover(carro);  
+  
+      }  
+  
+    }  
+  );  
+  
+  
+  carro.addEventListener(  
+    "pointerup",  
+    function(event) {  
+  
+      arrastando = false;  
+  
+  
+      try {  
+  
+        carro.releasePointerCapture(  
+          event.pointerId  
+        );  
+  
+      } catch(e) {}  
+  
+    }  
+  );  
+  
+  
+  carro.addEventListener(  
+    "pointercancel",  
+    function() {  
+  
+      arrastando = false;  
+  
+    }  
+  );  
+  
+}  
+  
+  
+/* ========================= */  
+/* ARRASTAR BOLA */  
+/* ========================= */  
+  
+function tornarBolaArrastavel() {  
+  
+  const bola =  
+    document.getElementById("bola");  
+  
+  let arrastando = false;  
+  
+  
+  bola.addEventListener(  
+    "pointerdown",  
+    function(event) {  
+  
+      if (  
+        posicoesBloqueadas ||  
+        desenhoAtivo  
+      ) {  
+        return;  
+      }  
+  
+  
+      event.preventDefault();  
+  
+      event.stopPropagation();  
+  
+      arrastando = true;  
+  
+      bola.setPointerCapture(  
+        event.pointerId  
+      );  
+  
+    }  
+  );  
+  
+  
+  bola.addEventListener(  
+    "pointermove",  
+    function(event) {  
+  
+      if (  
+        !arrastando ||  
+        posicoesBloqueadas ||  
+        desenhoAtivo  
+      ) {  
+        return;  
+      }  
+  
+  
+      moverElemento(  
+        bola,  
+        event  
+      );  
+  
+    }  
+  );  
+  
+  
+  bola.addEventListener(  
+    "pointerup",  
+    function(event) {  
+  
+      arrastando = false;  
+  
+  
+      try {  
+  
+        bola.releasePointerCapture(  
+          event.pointerId  
+        );  
+  
+      } catch(e) {}  
+  
+    }  
+  );  
+  
+  
+  bola.addEventListener(  
+    "pointercancel",  
+    function() {  
+  
+      arrastando = false;  
+  
+    }  
+  );  
+  
+}  
+  
+  
+/* ========================= */  
+/* MOVER ELEMENTO */  
+/* ========================= */  
+  
+function moverElemento(  
+  elemento,  
+  event  
+) {  
+  
+  const campo =  
+    document.getElementById(  
+      "campo"  
+    );  
+  
+  
+  const rect =  
+    campo.getBoundingClientRect();  
+  
+  
+  let x =  
+    (  
+      (event.clientX - rect.left)  
+      / rect.width  
+    ) * 100;  
+  
+  
+  let y =  
+    (  
+      (event.clientY - rect.top)  
+      / rect.height  
+    ) * 100;  
+  
+  
+  x = Math.max(  
+    3,  
+    Math.min(97, x)  
+  );  
+  
+  
+  y = Math.max(  
+    2,  
+    Math.min(98, y)  
+  );  
+  
+  
+  elemento.style.left =  
+    x + "%";  
+  
+  elemento.style.top =  
+    y + "%";  
+  
+}  
+  
+  
+/* ========================= */  
+/* ATUALIZAR BOTÃO REMOVER */  
+/* ========================= */  
+  
+function atualizarBotaoRemover(carro) {  
+  
+  const botao =  
+    document.getElementById(  
+      "removerSelecionado"  
+    );  
+  
+  
+  const x =  
+    parseFloat(carro.style.left);  
+  
+  const y =  
+    parseFloat(carro.style.top);  
+  
+  
+  botao.style.left =  
+    x + "%";  
+  
+  botao.style.top =  
+    (y - 2) + "%";  
+  
+}  
+  
+  
+/* ========================= */  
+/* BOTÃO REMOVER */  
+/* ========================= */  
+  
+document  
+  .getElementById(  
+    "removerSelecionado"  
+  )  
+  .addEventListener(  
+    "click",  
+    function(event) {  
+  
+      event.stopPropagation();  
+  
+      removerCarroSelecionado();  
+  
+    }  
+  );  
+  
+  
+/* ========================= */  
+/* CLICAR FORA */  
+/* ========================= */  
+  
+document  
+  .getElementById("campo")  
+  .addEventListener(  
+    "click",  
+    function(event) {  
+  
+      if (  
+        !event.target.classList.contains(  
+          "carro"  
+        ) &&  
+        event.target.id !==  
+          "removerSelecionado" &&  
+        !desenhoAtivo  
+      ) {  
+  
+        esconderRemover();  
+  
+      }  
+  
+    }  
+  );  
+  
+  
+/* ========================= */  
+/* INICIAR */  
+/* ========================= */  
+  
+tornarBolaArrastavel();  
+  
+  </script>
